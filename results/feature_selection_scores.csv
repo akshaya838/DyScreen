@@ -1,0 +1,8 @@
+,correlation_with_target,chi2_score,chi2_p_value,mutual_information,rfe_rank (1=kept)
+memory_score,0.15266,6.73218,0.00947,0.02361,1
+visual_score,0.03339,0.10231,0.74907,0.0131,4
+overall_accuracy,0.10277,1.19801,0.27372,0.01295,1
+age,0.05891,1.77447,0.18283,0.0076,1
+phonological_score,0.05366,0.67533,0.4112,0.00461,3
+miss_rate,0.01086,0.03517,0.85123,0.00383,2
+executive_score,0.01045,0.01171,0.91384,0.0,1

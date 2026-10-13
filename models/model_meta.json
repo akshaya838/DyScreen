@@ -1,0 +1,27 @@
+{
+  "model_name": "SVM (Class weight)",
+  "trained_on": "2026-10-07 10:45",
+  "n_train": 2915,
+  "n_test": 729,
+  "test_metrics": {
+    "Accuracy": 0.8957,
+    "Precision": 0.625,
+    "Recall": 0.0641,
+    "F1": 0.1163,
+    "ROC-AUC": 0.7381
+  },
+  "cv_recall": 0.5763,
+  "risk_thresholds": {
+    "LOW_MAX": 0.4,
+    "MODERATE_MAX": 0.7
+  },
+  "top_features": [
+    "memory_score",
+    "executive_score",
+    "visual_score",
+    "age",
+    "miss_rate",
+    "phonological_score",
+    "overall_accuracy"
+  ]
+}

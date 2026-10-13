@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DyScreen - reading skills games</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">DyScreen</div>
+    <div id="modeChip" class="chip">Checking server...</div>
+  </header>
+
+  <main id="app">
+    <!-- Start screen -->
+    <section id="screen-start" class="screen active">
+      <h1 class="hero">b d p q</h1>
+      <p class="lead">Six short games about letters, sounds, patterns and memory. It takes about five minutes.</p>
+      <div class="panel">
+        <label for="age">Child's age</label>
+        <select id="age">
+          <option value="">Select age</option>
+        </select>
+        <p class="small">No name, photo, video or contact details are collected. Only game scores and the age are sent.</p>
+        <button id="startBtn" class="btn primary">Start the games</button>
+        <p id="startError" class="error" role="alert"></p>
+      </div>
+      <p class="small note">DyScreen is an educational screening aid. It does not diagnose dyslexia.</p>
+    </section>
+
+    <!-- Game screen -->
+    <section id="screen-game" class="screen">
+      <div class="progress" id="progress"></div>
+      <h2 id="gameTitle"></h2>
+      <p id="gameInstruction" class="lead"></p>
+      <div id="gameStatus" class="status"></div>
+      <div id="gameArea" class="game-area"></div>
+    </section>
+
+    <!-- Loading -->
+    <section id="screen-loading" class="screen">
+      <h2>Preparing the report...</h2>
+    </section>
+
+    <!-- Report -->
+    <section id="screen-report" class="screen">
+      <div id="demoBanner" class="demo-banner hidden"></div>
+      <h2 class="report-title">DyScreen screening report</h2>
+      <div class="report-top">
+        <div class="risk-box" id="riskBox">
+          <div class="risk-label">Risk level</div>
+          <div class="risk-value" id="riskValue"></div>
+        </div>
+        <div class="risk-box">
+          <div class="risk-label">Estimated probability</div>
+          <div class="risk-value" id="probValue"></div>
+        </div>
+      </div>
+      <p class="small" id="modelInfo"></p>
+
+      <h3>Skill analysis</h3>
+      <div id="skillBars"></div>
+
+      <div class="two-col">
+        <div>
+          <h3>Weaker skill areas</h3>
+          <ul id="weakList"></ul>
+        </div>
+        <div>
+          <h3>Stronger skill areas</h3>
+          <ul id="strongList"></ul>
+        </div>
+      </div>
+
+      <h3>Game summary</h3>
+      <table class="summary" id="summaryTable"></table>
+
+      <div class="disclaimer">
+        <strong>Important:</strong> This is an educational screening aid and not a medical diagnosis.
+        A professional assessment should be considered if concerns persist.
+        <div class="small" id="thresholdNote"></div>
+      </div>
+
+      <div class="actions">
+        <button class="btn primary" onclick="location.reload()">Play again</button>
+        <button class="btn" onclick="window.print()">Print report</button>
+      </div>
+    </section>
+  </main>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+MODULE 4 - CLASS IMBALANCE (training set only; SMOTE is never applied before the split)
+Before balancing:  Class 0 = 2601   Class 1 = 314
+After SMOTE:       Class 0 = 2601   Class 1 = 2601
+Class-weight approach: data unchanged, minority errors weighted about 8.28x more.

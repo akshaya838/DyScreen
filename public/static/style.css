@@ -1,0 +1,130 @@
+/* DyScreen - child-friendly, calm and readable.
+   Andika is a typeface designed for beginning readers (clear b/d/p/q shapes). */
+:root {
+  --ink: #1E2B4A;
+  --bg: #EAF1F8;
+  --paper: #FFFFFF;
+  --sun: #FFC53D;
+  --sky: #3D7BD9;
+  --leaf: #2FA36B;
+  --berry: #D9486B;
+  --line: #CCD8E6;
+  --radius-lg: 22px;
+  --radius-sm: 12px;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Andika", "Trebuchet MS", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.5;
+}
+.topbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 14px 24px; background: var(--paper); border-bottom: 2px solid var(--line);
+}
+.brand { font-weight: 700; font-size: 1.4rem; }
+.chip { font-size: .85rem; padding: 4px 12px; border-radius: 99px; background: var(--bg); }
+.chip.real { background: #DDF3E7; color: #17603D; }
+.chip.demo { background: #FFF1CC; color: #7A5200; }
+
+main { max-width: 760px; margin: 0 auto; padding: 28px 18px 60px; }
+.screen { display: none; }
+.screen.active { display: block; }
+
+.hero {
+  font-size: clamp(3.5rem, 12vw, 6.5rem); letter-spacing: .12em; margin: 10px 0 0;
+  text-align: center; color: var(--sky);
+}
+.lead { font-size: 1.15rem; text-align: center; max-width: 34em; margin: 8px auto 22px; }
+.panel {
+  background: var(--paper); border-radius: var(--radius-lg); padding: 24px;
+  max-width: 420px; margin: 0 auto; border: 2px solid var(--line);
+}
+label { font-weight: 700; display: block; margin-bottom: 6px; }
+select {
+  width: 100%; font: inherit; font-size: 1.1rem; padding: 10px; border-radius: var(--radius-sm);
+  border: 2px solid var(--line); background: #fff;
+}
+.small { font-size: .88rem; opacity: .85; }
+.note { text-align: center; margin-top: 18px; }
+.error { color: var(--berry); min-height: 1.2em; }
+
+.btn {
+  font: inherit; font-size: 1.05rem; font-weight: 700; padding: 12px 22px; border-radius: 99px;
+  border: 2px solid var(--ink); background: var(--paper); color: var(--ink); cursor: pointer;
+  margin: 6px 4px;
+}
+.btn.primary { background: var(--sun); border-color: var(--sun); }
+.btn:hover { transform: translateY(-1px); }
+.btn:disabled { opacity: .5; cursor: default; transform: none; }
+button:focus-visible, select:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
+.panel .btn { width: 100%; margin: 16px 0 0; }
+
+.progress { display: flex; gap: 8px; justify-content: center; margin-bottom: 14px; }
+.progress span { width: 34px; height: 8px; border-radius: 99px; background: var(--line); }
+.progress span.done { background: var(--leaf); }
+.progress span.now { background: var(--sun); }
+h2 { text-align: center; margin: 6px 0; font-size: 1.8rem; }
+.status { text-align: center; font-weight: 700; min-height: 1.6em; }
+
+.game-area {
+  background: var(--paper); border-radius: var(--radius-lg); border: 2px solid var(--line);
+  padding: 22px; margin-top: 10px; text-align: center; min-height: 240px;
+}
+.grid { display: grid; gap: 10px; justify-content: center; margin: 10px auto; }
+.grid.g4 { grid-template-columns: repeat(4, 72px); }
+.grid.g3 { grid-template-columns: repeat(3, 82px); }
+.tile {
+  font: inherit; font-size: 2.3rem; height: 72px; border-radius: var(--radius-sm);
+  border: 2px solid var(--line); background: #F7FAFD; color: var(--ink); cursor: pointer;
+}
+.g3 .tile { height: 82px; }
+.tile.word { font-size: 1.5rem; }
+.tile.hit { background: #DDF3E7; border-color: var(--leaf); }
+.tile.miss { background: #FBE1E7; border-color: var(--berry); }
+.tile:disabled { cursor: default; }
+.big-symbols { font-size: 3rem; letter-spacing: .3em; min-height: 1.4em; margin: 14px 0; }
+.options { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 14px; }
+.options .tile { width: 120px; }
+.target-letter { font-size: 3.4rem; font-weight: 700; color: var(--sky); line-height: 1; }
+
+.demo-banner {
+  background: #FFF1CC; border: 2px dashed #E0A800; padding: 12px 16px;
+  border-radius: var(--radius-sm); margin-bottom: 18px; font-weight: 700;
+}
+.hidden { display: none; }
+.report-title { margin-bottom: 18px; }
+.report-top { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.risk-box { background: var(--paper); border: 2px solid var(--line); border-radius: var(--radius-lg); padding: 18px; text-align: center; }
+.risk-label { font-size: .95rem; }
+.risk-value { font-size: 2.4rem; font-weight: 700; }
+.risk-box.Low { border-color: var(--leaf); }
+.risk-box.Moderate { border-color: var(--sun); }
+.risk-box.High { border-color: var(--berry); }
+h3 { margin: 26px 0 8px; }
+.bar-row { display: grid; grid-template-columns: 200px 1fr 52px; gap: 10px; align-items: center; margin: 8px 0; }
+.bar { height: 16px; background: var(--line); border-radius: 99px; overflow: hidden; }
+.bar > div { height: 100%; background: var(--sky); border-radius: 99px; }
+.bar.weak > div { background: var(--berry); }
+.bar.strong > div { background: var(--leaf); }
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+ul { margin: 0; padding-left: 20px; }
+.summary { width: 100%; border-collapse: collapse; background: var(--paper); border-radius: var(--radius-sm); overflow: hidden; }
+.summary td { padding: 8px 12px; border-bottom: 1px solid var(--line); }
+.summary td:last-child { text-align: right; font-weight: 700; }
+.disclaimer { margin-top: 24px; padding: 16px; background: var(--paper); border-left: 6px solid var(--sky); border-radius: var(--radius-sm); }
+.actions { text-align: center; margin-top: 22px; }
+
+@media (max-width: 560px) {
+  .grid.g4 { grid-template-columns: repeat(4, 60px); }
+  .tile { height: 60px; font-size: 1.9rem; }
+  .bar-row { grid-template-columns: 1fr; }
+  .report-top, .two-col { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) { .btn:hover { transform: none; } }
+@media print {
+  .topbar, .actions { display: none; }
+  body { background: #fff; }
+}

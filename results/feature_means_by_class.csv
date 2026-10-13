@@ -1,0 +1,8 @@
+,No dyslexia,Dyslexia
+age,10.4351,10.898
+phonological_score,0.6875,0.7349
+visual_score,0.858,0.8772
+memory_score,0.0939,0.1405
+executive_score,0.45,0.4546
+overall_accuracy,0.4589,0.4961
+miss_rate,0.178,0.1793
